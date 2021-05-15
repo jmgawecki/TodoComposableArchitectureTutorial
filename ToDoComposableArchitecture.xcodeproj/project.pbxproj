@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		EF87490B264731760071BD5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF87490A264731760071BD5F /* Preview Assets.xcassets */; };
 		EF874916264731760071BD5F /* ToDoComposableArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF874915264731760071BD5F /* ToDoComposableArchitectureTests.swift */; };
 		EF874921264731760071BD5F /* ToDoComposableArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF874920264731760071BD5F /* ToDoComposableArchitectureUITests.swift */; };
+		EF874930264731D20071BD5F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EF87492F264731D20071BD5F /* ComposableArchitecture */; };
+		EF8749A22649C0520071BD5F /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8749A12649C0520071BD5F /* TodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		EF87491C264731760071BD5F /* ToDoComposableArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoComposableArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF874920264731760071BD5F /* ToDoComposableArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoComposableArchitectureUITests.swift; sourceTree = "<group>"; };
 		EF874922264731760071BD5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF8749A12649C0520071BD5F /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF874930264731D20071BD5F /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 			children = (
 				EF874903264731750071BD5F /* ToDoComposableArchitectureApp.swift */,
 				EF874905264731750071BD5F /* ContentView.swift */,
+				EF8749A12649C0520071BD5F /* TodoView.swift */,
 				EF874907264731760071BD5F /* Assets.xcassets */,
 				EF87490C264731760071BD5F /* Info.plist */,
 				EF874909264731760071BD5F /* Preview Content */,
@@ -146,6 +151,9 @@
 			dependencies = (
 			);
 			name = ToDoComposableArchitecture;
+			packageProductDependencies = (
+				EF87492F264731D20071BD5F /* ComposableArchitecture */,
+			);
 			productName = ToDoComposableArchitecture;
 			productReference = EF874900264731750071BD5F /* ToDoComposableArchitecture.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +225,9 @@
 				Base,
 			);
 			mainGroup = EF8748F7264731750071BD5F;
+			packageReferences = (
+				EF87492E264731D20071BD5F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = EF874901264731750071BD5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8749A22649C0520071BD5F /* TodoView.swift in Sources */,
 				EF874906264731750071BD5F /* ContentView.swift in Sources */,
 				EF874904264731750071BD5F /* ToDoComposableArchitectureApp.swift in Sources */,
 			);
@@ -580,6 +592,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF87492E264731D20071BD5F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF87492F264731D20071BD5F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF87492E264731D20071BD5F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF8748F8264731750071BD5F /* Project object */;
 }
