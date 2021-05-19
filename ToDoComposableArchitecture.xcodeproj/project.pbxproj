@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EF874904264731750071BD5F /* ToDoComposableArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF874903264731750071BD5F /* ToDoComposableArchitectureApp.swift */; };
-		EF874906264731750071BD5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF874905264731750071BD5F /* ContentView.swift */; };
 		EF874908264731760071BD5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF874907264731760071BD5F /* Assets.xcassets */; };
 		EF87490B264731760071BD5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF87490A264731760071BD5F /* Preview Assets.xcassets */; };
 		EF874916264731760071BD5F /* ToDoComposableArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF874915264731760071BD5F /* ToDoComposableArchitectureTests.swift */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		EF874900264731750071BD5F /* ToDoComposableArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoComposableArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF874903264731750071BD5F /* ToDoComposableArchitectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoComposableArchitectureApp.swift; sourceTree = "<group>"; };
-		EF874905264731750071BD5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF874907264731760071BD5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF87490A264731760071BD5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF87490C264731760071BD5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				EF874903264731750071BD5F /* ToDoComposableArchitectureApp.swift */,
-				EF874905264731750071BD5F /* ContentView.swift */,
 				EF8749A12649C0520071BD5F /* TodoView.swift */,
 				EF874907264731760071BD5F /* Assets.xcassets */,
 				EF87490C264731760071BD5F /* Info.plist */,
@@ -271,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8749A22649C0520071BD5F /* TodoView.swift in Sources */,
-				EF874906264731750071BD5F /* ContentView.swift in Sources */,
 				EF874904264731750071BD5F /* ToDoComposableArchitectureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,12 +11,15 @@ import ComposableArchitecture
 
 @main
 struct ToDoComposableArchitectureApp: App {
-    var body: some Scene {
-        WindowGroup {
-            TodoView(store: Store<AppState, AppAction>(
-                        initialState: AppState(),
-                        reducer: appReducer,
-                        environment: AppEnvironemnt()))
-        }
-    }
+   var body: some Scene {
+      WindowGroup {
+         TodoView(store: Store<AppState, AppAction>(
+            initialState: AppState(),
+            reducer: appReducer,
+            environment: AppEnvironemnt(
+               uuid: UUID.init
+            )
+         ))
+      }
+   }
 }
