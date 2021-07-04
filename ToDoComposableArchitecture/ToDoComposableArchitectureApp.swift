@@ -17,6 +17,7 @@ struct ToDoComposableArchitectureApp: App {
             initialState: AppState(),
             reducer: appReducer,
             environment: AppEnvironemnt(
+               mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
                uuid: UUID.init
             )
          ))

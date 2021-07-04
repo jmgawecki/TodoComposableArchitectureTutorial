@@ -52,10 +52,12 @@ struct AppState: Equatable {
 enum AppAction: Equatable {
    case todo(index: Int, action: TodoAction)
    case addButtonTapped
+   case todoDelayCompleted
 }
 
 
 struct AppEnvironemnt {
+   var mainQueue: AnySchedulerOf<DispatchQueue>
    var uuid: () -> UUID
 }
 
@@ -69,6 +71,23 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironemnt>.combine(
    Reducer { state, action, environemnt in
       switch action {
       case .todo(index: _, action: .checkboxTapped):
+         struct CancelDelayId: Hashable {}
+         
+         return Effect(value: AppAction.todoDelayCompleted)
+            .debounce(id: CancelDelayId(), for: 1, scheduler: environemnt.mainQueue)
+         // that line above, replaces 3 lines below
+//            .delay(for: 1, scheduler: RunLoop.main)
+//            .eraseToEffect()
+//            .cancellable(id: CancelDelayId(), cancelInFlight: true)
+         
+      case .todo(index: let index, action: let action):
+         return .none
+         
+      case .addButtonTapped:
+         state.todos.insert(Todo(id: environemnt.uuid()), at: 0)
+         return .none
+         
+      case .todoDelayCompleted:
          state.todos = state.todos
             .enumerated()
             .sorted { lhs, rhs in
@@ -76,13 +95,6 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironemnt>.combine(
                   || lhs.offset < rhs.offset
          }
             .map (\.element)
-         return .none
-         
-      case .todo(index: let index, action: let action):
-         return .none
-         
-      case .addButtonTapped:
-         state.todos.insert(Todo(id: environemnt.uuid()), at: 0)
          return .none
       }
    }
@@ -117,6 +129,7 @@ struct TodoView: View {
                                        label: { Text("Add Todo") }
                                     )
             )
+            .animation(.default)
          }
       }
    }
@@ -140,6 +153,7 @@ struct TodoView_Previews: PreviewProvider {
          ),
          reducer: appReducer,
          environment: AppEnvironemnt(
+            mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
             uuid: UUID.init
          )
       ))
